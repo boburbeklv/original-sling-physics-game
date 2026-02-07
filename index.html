@@ -3,21 +3,42 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sling Physics Game</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Sling Physics Game - Original</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
-        <h1>Welcome to the Sling Physics Game</h1>
-    </header>
-    <main>
-        <div id="game-container">
-            <!-- Game Content Goes Here -->
+    <!-- Loading Screen -->
+    <div id="loading-screen" style="display: none;">
+        <div class="loading-container">
+            <div class="logo-animation">
+                <h1>🎮 Sling Physics Game</h1>
+            </div>
+            <div class="loading-bar-container">
+                <div class="loading-bar" id="loadingBar"></div>
+            </div>
+            <p class="loading-text">Loading... <span id="loadingPercent">0</span>%</p>
         </div>
-    </main>
-    <footer>
-        <p>&copy; 2026 Sling Physics Game</p>
-    </footer>
-    <script src="script.js"></script>
+    </div>
+
+    <!-- Game Canvas -->
+    <canvas id="gameCanvas"></canvas>
+
+    <!-- Game Container -->
+    <div id="game-container">
+        <!-- Game content will be rendered here -->
+    </div>
+
+    <!-- Scripts -->
+    <!-- Load Matter.js physics engine -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/matter-js/2.0.19/matter.min.js"></script>
+    
+    <!-- Load game modules in order -->
+    <script src="loading.js"></script>
+    <script src="canvas.js"></script>
+    <script src="physics.js"></script>
+    <script src="menu.js"></script>
+    <script src="levelSystem.js"></script>
+    <script src="gameplay.js"></script>
+    <script src="ui.js"></script>
 </body>
 </html>
